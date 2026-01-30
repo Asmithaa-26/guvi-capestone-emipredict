@@ -1,0 +1,19 @@
+# Data
+*.csv
+!data/loan_applications.csv
+
+# Models
+*.pkl
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Python
+__pycache__/
+venv/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.streamlit/
