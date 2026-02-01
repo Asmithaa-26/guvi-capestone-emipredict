@@ -12,12 +12,14 @@ from huggingface_hub import hf_hub_download
 def load_models():
     classifier_path = hf_hub_download(
         repo_id="asmithaaa/emi-eligibility-model",
-        filename="emi_eligibility_classifier.pkl"
+        filename="emi_eligibility_classifier.pkl",
+        token=st.secrets["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"]
     )
 
     regressor_path = hf_hub_download(
         repo_id="asmithaaa/emi-eligibility-model",
-        filename="emi_model.pkl"
+        filename="emi_model.pkl",
+        token=st.secrets["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"]
     )
 
     classifier = joblib.load(classifier_path)
