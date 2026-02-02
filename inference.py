@@ -3,11 +3,10 @@ import joblib
 import pandas as pd
 from huggingface_hub import hf_hub_download
 from feature_builder import prepare_input_features
+import streamlit as st
 
-# --------------------------------
-# LOAD MODELS FROM HUGGING FACE
-# --------------------------------
 
+@st.cache_resource
 def load_models():
     """
     Downloads models from Hugging Face once and caches them.
@@ -15,12 +14,14 @@ def load_models():
 
     classifier_path = hf_hub_download(
         repo_id="asmithaaa/emi-eligibility-model",
-        filename="emi_eligibility_classifier.pkl"
+        filename="emi_eligibility_classifier.pkl",
+        
     )
 
     regressor_path = hf_hub_download(
         repo_id="asmithaaa/emi-eligibility-model",
-        filename="emi_model.pkl"
+        filename="emi_model.pkl",
+        
     )
 
     classifier = joblib.load(classifier_path)

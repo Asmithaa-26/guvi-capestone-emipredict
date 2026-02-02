@@ -5,31 +5,6 @@ from inference import predict_emi   # classifier + regressor inference
 import joblib
 from huggingface_hub import hf_hub_download
 
-# --------------------------------
-# LOAD MODELS (CACHED)
-# --------------------------------
-@st.cache_resource
-def load_models():
-    classifier_path = hf_hub_download(
-        repo_id="asmithaaa/emi-eligibility-model",
-        filename="emi_eligibility_classifier.pkl",
-        token=st.secrets["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"]
-    )
-
-    regressor_path = hf_hub_download(
-        repo_id="asmithaaa/emi-eligibility-model",
-        filename="emi_model.pkl",
-        token=st.secrets["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"]
-    )
-
-    classifier = joblib.load(classifier_path)
-    regressor = joblib.load(regressor_path)
-
-    return classifier, regressor
-
-
-classifier, regressor = load_models()
-
 
 st.set_page_config(layout="wide")
 st.title("EMI Eligibility & Risk Prediction")
