@@ -1,5 +1,5 @@
 import streamlit as st
-from inference import predict_emi   # classifier + regressor inference
+from inference import predict_emi, load_models   # classifier + regressor inference
 
 
 import joblib
@@ -124,6 +124,7 @@ with col14:
 st.markdown("---")
 
 if st.button("Run Prediction"):
+    classifier, regressor = load_models()
 
     raw_input = {
         "age": age,
