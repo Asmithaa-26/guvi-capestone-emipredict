@@ -6,7 +6,7 @@ from feature_builder import prepare_input_features
 import streamlit as st
 
 
-@st.cache_resource
+@st.cache_data
 def load_models():
     """
     Downloads models from Hugging Face once and caches them.
