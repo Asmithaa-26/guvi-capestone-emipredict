@@ -32,7 +32,7 @@ def load_models():
 
 
 # Load models once (important for Streamlit performance)
-classifier, regressor = load_models()
+#classifier, regressor = load_models()
 
 
 # --------------------------------
