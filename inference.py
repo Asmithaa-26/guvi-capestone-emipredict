@@ -15,12 +15,13 @@ def load_models():
     classifier_path = hf_hub_download(
         repo_id="asmithaaa/emi-eligibility-model",
         filename="emi_eligibility_classifier.pkl",
-        
+        token=st.secrets["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"]
     )
 
     regressor_path = hf_hub_download(
         repo_id="asmithaaa/emi-eligibility-model",
         filename="emi_model.pkl",
+        token=st.secrets["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"]
         
     )
 
